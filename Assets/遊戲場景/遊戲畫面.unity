@@ -721,7 +721,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd1583c998799479d8d6f34f02bb9cb9, type: 2}
+  - {fileID: 2100000, guid: 0c5423be35f4349009475f95f86ad727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1285,6 +1285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 10
+  minimumY: -67.5
+  maximumY: 22.5
 --- !u!81 &1410597633
 AudioListener:
   m_ObjectHideFlags: 0
