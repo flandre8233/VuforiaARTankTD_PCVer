@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class StartButton : SingletonMonoBehavior<StartButton>
+public class StartButton : MonoBehaviour
 {
-   
-    public void StartGame()
-    {
-        //隱藏這按鈕
-        gameObject.SetActive(false);
-        gameManager.instance.SightingUI.SetActive(true);
-        //發出開始遊戲信號
-        gameManager.instance.isGameStart = true;
-    }
+    [SerializeField]
+    GameObject SightingUI;
+
+    [SerializeField]
+    GameObject gameManager;
 
     private void Update()
     {
@@ -19,6 +15,16 @@ public class StartButton : SingletonMonoBehavior<StartButton>
         {
             StartGame();
         }
+    }
+
+    public void StartGame()
+    {
+        //隱藏這按鈕
+        gameObject.SetActive(false);
+        //開準星
+        SightingUI.SetActive(true);
+        //讓遊戲開始運作
+        gameManager.SetActive(true);
     }
 
 }

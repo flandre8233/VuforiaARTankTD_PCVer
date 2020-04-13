@@ -14,9 +14,6 @@ public class CameraMouseRotation : MonoBehaviour
     void Update()
     {
         var c = Camera.main.transform;
-        //c.Rotate(0, Input.GetAxis("Mouse X") * sensitivity, 0);
-        //c.Rotate(-Input.GetAxis("Mouse Y") * sensitivity, 0, 0);
-
 
         rotationX +=  Input.GetAxis("Mouse X") * sensitivity;
         rotationY +=  Input.GetAxis("Mouse Y") * sensitivity;

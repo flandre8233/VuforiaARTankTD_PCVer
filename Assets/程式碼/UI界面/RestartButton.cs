@@ -11,4 +11,12 @@ public class RestartButton : MonoBehaviour
         //重載這個場景
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestartGame();
+        }
+    }
 }
