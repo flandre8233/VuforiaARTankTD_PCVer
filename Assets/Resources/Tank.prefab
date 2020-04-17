@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6757825564620106326}
   - component: {fileID: 5302439569565389197}
   m_Layer: 0
-  m_Name: "\u5766\u514B"
+  m_Name: Tank
   m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffectObject: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b,
     type: 3}
-  speed: 2
+  speed: 4
 --- !u!82 &5302439569565389197
 AudioSource:
   m_ObjectHideFlags: 0

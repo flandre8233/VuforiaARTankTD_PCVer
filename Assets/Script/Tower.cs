@@ -5,9 +5,6 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField]
-    GameObject gameManager;
-
-    [SerializeField]
     UIManager UIManager;
 
     public int MaxTowerHP;
@@ -24,13 +21,15 @@ public class Tower : MonoBehaviour
 
         if (other.gameObject.tag == "Tank")
         {
-            TowerHP-=1;
+            TowerHP -= 1;
         }
 
         if (TowerHP <= 0)
         {
-            UIManager.ToGameLose();
-            Destroy(gameManager);
+            if (UIManager != null)
+            {
+                UIManager.ToGameLose();
+            }
             Destroy(gameObject);
         }
     }
