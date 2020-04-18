@@ -14,6 +14,6 @@ public class HPBarUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HpUIText.text = tower.TowerHP + " / " + tower.MaxTowerHP;
+        HpUIText.text =  "Tower HP : " + tower.TowerHP + " / " + tower.MaxTowerHP;
     }
 }
