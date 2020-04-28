@@ -40,7 +40,8 @@ public class TankSpawner : MonoBehaviour
             GameObject SpawnedObj = Instantiate(TankPrefab, SpawnParent.transform);
             //為這剛生成的坦克設定他的坐標（因為極坐標輸出是以0,0作中心點，而塔就在GameGround的正中央，所以可以把極坐標數值設定至坦克localPosition而不是世界坐標
             SpawnedObj.transform.position = getRandomSpawnPoint();
-            SpawnedObj.transform.LookAt(tower.transform);
+
+            SpawnedObj.transform.LookAt(tower.transform,Vector3.back);
         }
     }
 
