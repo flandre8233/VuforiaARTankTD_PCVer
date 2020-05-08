@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class TankSpawner : MonoBehaviour
 {
     /// <summary>
@@ -21,11 +21,16 @@ public class TankSpawner : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnTank", 0.1f, 0.5f);
+
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            spawnPoints[i].transform.LookAt(tower.transform , Vector3.back);
+        }
     }
 
-    public Vector3 getRandomSpawnPoint()
+    public Transform getRandomSpawnTran()
     {
-        return spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+        return spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
     }
 
     /// <summary>
@@ -39,9 +44,9 @@ public class TankSpawner : MonoBehaviour
             //生成坦克
             GameObject SpawnedObj = Instantiate(TankPrefab, SpawnParent.transform);
             //為這剛生成的坦克設定他的坐標（因為極坐標輸出是以0,0作中心點，而塔就在GameGround的正中央，所以可以把極坐標數值設定至坦克localPosition而不是世界坐標
-            SpawnedObj.transform.position = getRandomSpawnPoint();
-
-            SpawnedObj.transform.LookAt(tower.transform,Vector3.back);
+            Transform SpawnPointTran = getRandomSpawnTran();
+            SpawnedObj.transform.position = SpawnPointTran.position;
+            SpawnedObj.transform.eulerAngles = SpawnPointTran.eulerAngles;
         }
     }
 
